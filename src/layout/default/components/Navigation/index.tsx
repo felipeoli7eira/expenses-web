@@ -13,6 +13,8 @@ import { NavLink } from 'react-router-dom'
 import { Tooltip } from 'primereact/tooltip'
 import { NavigationProps } from '../../../../interfaces/DefaultTemplateProps'
 
+import { appRoutesMap } from '../../../../routes/routes'
+
 export default function Navigation({ navigationIsOpen }: NavigationProps): JSX.Element {
   const { prefColorSchema } = usePrefersColorSchema()
 
@@ -48,7 +50,7 @@ export default function Navigation({ navigationIsOpen }: NavigationProps): JSX.E
           </NavLink>
 
           <NavLink
-            to={''}
+            to={appRoutesMap.expenseRead.path}
             data-pr-tooltip='Despesas'
             className={menuItemClassDesign.concat('expenses-navlink')}
           >

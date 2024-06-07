@@ -3,7 +3,7 @@ import AuthProvider from '../contexts/AuthContext'
 import Protected from './ProtectedRoute'
 
 import LoginPage from '../pages/public/Login/page'
-import React from 'react'
+import ExpensesRead from '../pages/private/Expenses/ExpensesRead/page'
 
 export const appRoutesMap = {
   login: {
@@ -11,6 +11,13 @@ export const appRoutesMap = {
   },
   appHome: {
     path: '/app',
+  },
+
+  expenseRead: {
+    path: 'despesas',
+  },
+  expenseCreate: {
+    path: 'despesas/nova',
   },
 }
 
@@ -35,6 +42,7 @@ export function AppRoutes(): JSX.Element {
 
         <Route path={appRoutesMap.appHome.path} element={<Protected />}>
           <Route path={appRoutesMap.appHome.path} element={<>...</>} />
+          <Route path={appRoutesMap.expenseRead.path} element={<ExpensesRead />} />
         </Route>
       </Routes>
     </AuthProvider>
