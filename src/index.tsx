@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals'
 
 import '/node_modules/primeflex/primeflex.css'
 
+import 'primeicons/primeicons.css'
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
