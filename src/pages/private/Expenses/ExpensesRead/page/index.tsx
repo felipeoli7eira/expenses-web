@@ -45,7 +45,7 @@ function ExpensesRead(): JSX.Element {
             rounded
             className='bg-purple-500 hover:bg-purple-400 border-purple-700'
           >
-            <GoPlus /> Nova despesa
+            <GoPlus /> Cadastrar
           </Button>
         </div>
       </header>
