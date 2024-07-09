@@ -41,7 +41,7 @@ export default function Navigation({ navigationIsOpen }: NavigationProps): JSX.E
           </NavLink>
 
           <NavLink
-            to={''}
+            to={appRoutesMap.categoriesRead.path}
             data-pr-tooltip='Classificações'
             className={menuItemClassDesign.concat('levels-navlink')}
           >

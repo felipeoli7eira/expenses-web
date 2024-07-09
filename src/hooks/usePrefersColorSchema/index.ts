@@ -54,7 +54,7 @@ export default function usePrefersColorSchema() {
     }
 
     isDarkModePrefColorSchema.onchange = (event: any) => {
-      event?.currentTarget?.matches ? setPrefColorSchema('dark') : setPrefColorSchema('light')
+      setPrefColorSchema(event?.currentTarget?.matches ? 'dark' : 'light')
     }
   }
 

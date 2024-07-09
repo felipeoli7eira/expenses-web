@@ -4,6 +4,8 @@ import Protected from './ProtectedRoute'
 
 import LoginPage from '../pages/public/Login/page'
 import ExpensesRead from '../pages/private/Expenses/ExpensesRead/page'
+import CategoriesRead from '../pages/private/Categories/Read/page'
+import AppHome from '../pages/private/App/page'
 
 export const appRoutesMap = {
   login: {
@@ -12,7 +14,9 @@ export const appRoutesMap = {
   appHome: {
     path: '/app',
   },
-
+  categoriesRead: {
+    path: 'classificacoes',
+  },
   expenseRead: {
     path: 'despesas',
   },
@@ -41,8 +45,11 @@ export function AppRoutes(): JSX.Element {
         <Route path={appRoutesMap.login.path} element={<LoginPage />} />
 
         <Route path={appRoutesMap.appHome.path} element={<Protected />}>
-          <Route path={appRoutesMap.appHome.path} element={<>...</>} />
-          <Route path={appRoutesMap.expenseRead.path} element={<ExpensesRead />} />
+
+          <Route path={appRoutesMap.appHome.path}        element={<AppHome />}        />
+          <Route path={appRoutesMap.expenseRead.path}    element={<ExpensesRead />}   />
+          <Route path={appRoutesMap.categoriesRead.path} element={<CategoriesRead />} />
+
         </Route>
       </Routes>
     </AuthProvider>

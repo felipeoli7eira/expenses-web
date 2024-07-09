@@ -11,6 +11,7 @@ import usePrefersColorSchema from '../../../../../hooks/usePrefersColorSchema'
 import clsx from 'clsx'
 import { theme } from '../../../../../styles/Theme'
 import { iconsSize } from '../../../../../styles/global'
+import PageHeaderComponent from '../../../../../components/PageHeader'
 
 function ExpensesRead(): JSX.Element {
   const expenses = [
@@ -32,30 +33,30 @@ function ExpensesRead(): JSX.Element {
 
   const { prefColorSchema } = usePrefersColorSchema()
 
+  const headerControls: JSX.Element = (
+    <Button
+        type='button'
+        onClick={() => {
+            console.log('')
+        }}
+        rounded
+        className='bg-purple-500 hover:bg-purple-400 border-purple-400 hover:border-purple-300 border-2'
+    >
+        <GoPlus size={iconsSize} /> Cadastrar
+    </Button>
+  )
+
   return (
     <Container className='ExpensesRead p-5 mx-auto'>
-      <header className='flex flex-wrap justify-content-between mb-8'>
-        <h1 className='font-light m-0 text-color'>Despesas</h1>
-        <div className='controls'>
-          <Button
-            type='button'
-            onClick={() => {
-              console.log('')
-            }}
-            rounded
-            className='bg-purple-500 hover:bg-purple-400 border-purple-700'
-          >
-            <GoPlus /> Cadastrar
-          </Button>
-        </div>
-      </header>
+      <PageHeaderComponent pageName='Despesas' controls={headerControls} />
 
       <div className='flex flex-column gap-1'>
         {expenses.map((expense, index) => (
           <Card
             key={index}
             className={clsx({
-              'bg-white': prefColorSchema === 'light',
+              'shadow-none': true,
+              'bg-gray-300': prefColorSchema === 'light',
               'bg-black-alpha-40': prefColorSchema === 'dark',
             })}
           >
